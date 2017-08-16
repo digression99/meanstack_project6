@@ -1,0 +1,11 @@
+{
+  "name": "meanstack_project6",
+  "version": "1.0.0",
+  "description": "meanstack project david acosta",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kim ilsik",
+  "license": "ISC"
+}
