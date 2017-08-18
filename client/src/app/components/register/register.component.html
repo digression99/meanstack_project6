@@ -1,0 +1,87 @@
+<div class="container">
+  <form [formGroup]="form" (submit)="onRegisterSubmit()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <div [ngClass]="{'has-error':(form.controls.username.errors && form.controls.username.dirty), 'has-success':!form.controls.username.errors}">
+        <input type="username" name="username" class="form-control" autocomplete="off" placeholder="*Username" formControlName="username">
+        <ul class="help-block">
+          <!--
+          errors?.required -> If there's such thing, then required.
+          -->
+          <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">This field is required.</li>
+          <li *ngIf="(form.controls.username.errors?.minlength || form.controls.username.errors?.maxlength) && form.controls.username.dirty">Min length : 3, Max length : 15.</li>
+          <li *ngIf="form.controls.username.errors?.validateUsername && form.controls.username.dirty">Username must not have any special characters.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <div [ngClass]="{'has-error':(form.controls.email.errors && form.controls.email.dirty), 'has-success':!form.controls.email.errors}">
+        <input type="email" name="email" class="form-control" autocomplete="off" placeholder="*E-mail" formControlName="email">
+        <ul class="help-block">
+          <!--
+          errors?.required -> If there's such thing, then required.
+          -->
+          <li *ngIf="form.controls.email.errors?.required && form.controls.email.dirty">This field is required.</li>
+          <li *ngIf="(form.controls.email.errors?.minlength || form.controls.email.errors?.maxlength) && form.controls.email.dirty">Min length : 5, Max length : 30.</li>
+          <li *ngIf="form.controls.email.errors?.validateEmail && form.controls.email.dirty">Must be a valid E-mail.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div [ngClass]="{'has-error':(form.controls.password.errors && form.controls.password.dirty), 'has-success':!form.controls.password.errors}">
+        <input type="password" name="password" class="form-control" autocomplete="off" placeholder="*Password" formControlName="password">
+        <ul class="help-block">
+          <!--
+          errors?.required -> If there's such thing, then required.
+          -->
+          <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">This field is required.</li>
+          <li *ngIf="(form.controls.password.errors?.minlength || form.controls.password.errors?.maxlength) && form.controls.password.dirty">Min length : 8, Max length : 35.</li>
+          <li *ngIf="form.controls.password.errors?.validatePassword && form.controls.password.dirty">Must be a valid Password.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Confirm Password</label>
+      <div [ngClass]="{'has-error':(form.controls.confirm.errors && form.controls.confirm.dirty) ||
+      (form.errors?.matchingPasswords && form.controls.confirm.dirty)
+      , 'has-success':(!form.controls.confirm.errors) && (!form.errors?.matchingPasswords)}">
+        <input type="password" name="confirm" class="form-control" autocomplete="off" placeholder="*Confirm" formControlName="confirm">
+        <ul class="help-block">
+          <!--
+          errors?.required -> If there's such thing, then required.
+          -->
+          <li *ngIf="form.controls.confirm.errors?.required && form.controls.confirm.dirty">This field is required.</li>
+          <li *ngIf="(form.controls.confirm.errors?.minlength || form.controls.confirm.errors?.maxlength) && form.controls.confirm.dirty">Min length : 8, Max length : 35.</li>
+          <li *ngIf="form.errors?.matchingPasswords && form.controls.confirm.dirty">Password do not match.</li>
+        </ul>
+      </div>
+    </div>
+  </form>
+</div>
+
+<p>Username : {{form.controls.username.value}}</p>
+<p>Email : {{form.controls.email.value}}</p>
+<p>Password : {{form.controls.password.value}}</p>
+<p>Confirm : {{form.controls.confirm.value}}</p>
+
+<!--
+<div class="container">
+  <form class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
+</div> <!-- /container -->
