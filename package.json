@@ -4,8 +4,18 @@
   "description": "meanstack project david acosta",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "kim ilsik",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "crypto": "^1.0.1",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^7.4.3",
+    "mongoose": "^4.11.7"
+  }
 }

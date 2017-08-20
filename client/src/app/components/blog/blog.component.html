@@ -1,0 +1,76 @@
+<h1 class="page-header">Blog Feed</h1>
+
+<!--<div class="row show-hide-message">-->
+<!--<div [ngClass]="messageClass">-->
+<!--{{message}}-->
+<!--</div>-->
+<!--</div>-->
+
+<button type="button" name="button" class="btn btn-warning" *ngIf="!newPost" (click)="newBlogForm()">New Post</button>
+<button [disabled]="loadingBlogs" type="button" name="button" class="btn btn-default" (click)="reloadBlogs()">
+  <span class="glyphicons glyphicons-rotate-left"></span>&#xe022;&nbsp;&nbsp;Reload</button>
+
+<div class="blog-body">
+
+  <div class="container">
+    <div *ngIf="!newPost">
+      <div class="card">
+        <div class="card-header bg-info">
+          <h3 class="card-title text-capitalize text-center">Post Title</h3>
+        </div>
+        <div class="card-body text-left text-justify">
+          Pellentesque ornare a urna et molestie. Vivamus semper lorem vel mauris varius, ac lobortis ante semper. Ut dui justo, interdum eget ligula ac, feugiat lacinia turpis. Aliquam ullamcorper quam nec augue commodo sollicitudin. Sed egestas leo erat, ac pellentesque nunc convallis at. Nullam lobortis lectus tincidunt iaculis interdum. Nam vitae pretium elit, a bibendum libero. Ut sollicitudin accumsan lorem, id posuere metus luctus id. Donec non elit eu est tempor fermentum nec ac nunc. Nam tincidunt tellus ex. Aenean est enim, euismod nec finibus non, blandit non nisi. Phasellus sed est leo. Sed sed bibendum urna. Morbi maximus arcu et elementum scelerisque. Donec placerat augue at lorem malesuada, a hendrerit erat finibus.
+        </div>
+        <!-- Start card Footer -->
+        <div class="card-footer">
+          <p>
+            <strong>Posted by : </strong>Kim
+          </p>
+          <p>
+            <strong>Date : </strong>Aug 20, 2017
+          </p>
+          <div>
+            <p><strong>Likes : </strong>25</p>
+            <p><strong>Dislikes : </strong>22</p>
+          </div>
+          <a href="#"><button type="button" name="button" class="btn btn-sm btn-info">Edit</button></a>
+          <a href="#"><button type="button" name="button" class="btn btn-sm btn-danger">Delete</button></a>
+
+          <!-- Likes dropdown -->
+          <div class="dropdown">
+            <button type="button" name="button" class="btn btn-sm btn-success">Likes : 21</button>
+            <div class="dropdown-content">
+              <a href="#">kim</a>
+              <a href="#">jin</a>
+              <a href="#">patel</a>
+            </div>
+          </div>
+          <!-- Dislikes dropdown -->
+          <div class="dropdown">
+            <button type="button" name="button" class="btn btn-sm btn-warning">Dislikes : 22</button>
+            <div class="dropdown-content">
+              <a href="#">kim</a>
+              <a href="#">jin</a>
+              <a href="#">patel</a>
+            </div>
+          </div>
+        </div> <!-- End card Footer -->
+
+        <ul class="list-group">
+          <li class="list-group-item">
+            <button type="button" name="button" class="btn btn-sm btn-danger" (click)="draftComment()">Post Comment</button>
+
+            <!--<form class="form-group">-->
+              <!--<textarea name="comment" rows="10" cols="30" class="form-control"></textarea>-->
+              <!--<button type="button" name="button" class="btn btn-sm btn-info">Submit Post</button>-->
+              <!--<button type="button" name="button" class="btn btn-sm btn-danger">Cancel</button>-->
+            <!--</form>-->
+
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
