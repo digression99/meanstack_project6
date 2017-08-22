@@ -10,7 +10,6 @@ export class BlogService {
 
   constructor(private authService : AuthService,
               private http : Http) {
-
   }
 
   addNewBlog(blog) {

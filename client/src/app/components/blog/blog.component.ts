@@ -121,7 +121,7 @@ export class BlogComponent implements OnInit {
 
         setTimeout(() => {
           this.newPost = false;
-          this.processing = true;
+          this.processing = false;
           this.message = false;
           this.form.reset();
           this.enableNewBlogForm();

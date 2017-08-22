@@ -9,6 +9,7 @@ import {ProfileComponent} from '../../components/profile/profile.component';
 import {AuthGuardService} from '../../services/auth-guard.service';
 import {NotAuthGuardService} from '../../services/not-auth-guard.service';
 import {BlogComponent} from '../../components/blog/blog.component';
+import {EditBlogComponent} from '../../components/edit-blog/edit-blog.component';
 
 const appRoutes : Routes = [
   {path : 'login', component : LoginComponent, canActivate:[NotAuthGuardService]},
@@ -18,6 +19,7 @@ const appRoutes : Routes = [
   {path : 'blogs/newblog', component : BlogComponent, canActivate : [AuthGuardService]},
   {path : '', component : HomeComponent},
   {path : '**', component : HomeComponent},
+  {path : 'blogs/edit-blog', component : EditBlogComponent, canActivate : [AuthGuardService]},
 ];
 
 @NgModule({

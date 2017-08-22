@@ -26,6 +26,7 @@ import {AuthGuardService} from './services/auth-guard.service';
 import {NotAuthGuardService} from './services/not-auth-guard.service';
 import { BlogComponent } from './components/blog/blog.component';
 import {BlogService} from './services/blog.service';
+import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {BlogService} from './services/blog.service';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    BlogComponent
+    BlogComponent,
+    EditBlogComponent
   ],
   imports: [
     BrowserModule,
