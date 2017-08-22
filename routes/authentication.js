@@ -109,6 +109,7 @@ module.exports = (router) => {
         }
     });
 
+
     // use middleware to get header.
     // router that don't need authrorization goes before this middleware.
     // router that need authroization goes after this middleware.
@@ -132,6 +133,10 @@ module.exports = (router) => {
             //res.json({success : true, message : ''});
         }
     });
+
+
+
+
 
     router.get('/profile', (req, res) => {
         // use token to check who logged in.

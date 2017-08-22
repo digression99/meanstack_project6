@@ -1,40 +1,87 @@
 <h1 class="page-header">Blog Feed</h1>
 
-<!--<div class="row show-hide-message">-->
-<!--<div [ngClass]="messageClass">-->
-<!--{{message}}-->
-<!--</div>-->
-<!--</div>-->
+<div class="row show-hide-message" *ngIf="message && newPost">
+<div [ngClass]="messageClass">
+{{message}}
+</div>
+</div>
 
 <button type="button" name="button" class="btn btn-warning" *ngIf="!newPost" (click)="newBlogForm()">New Post</button>
 <button [disabled]="loadingBlogs" type="button" name="button" class="btn btn-default" (click)="reloadBlogs()">
   <span class="glyphicons glyphicons-rotate-left"></span>&#xe022;&nbsp;&nbsp;Reload</button>
 
-<div class="blog-body">
+<!-- New blog form -->
+<form [formGroup]="form" name="blogForm" (submit)="onBlogSubmit()" *ngIf="newPost">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <div [ngClass]="{'has-success' : form.controls.title.valid, 'has-error': form.controls.title.dirty && form.controls.title.errors}">
+      <input type="text" name="title" class="form-control" placeholder="*Blog Title" autocomplete="off" formControlName="title">
 
+      <ul class="help-block">
+        <li *ngIf="form.controls.title.dirty && form.controls.title.errors?.required">This field is required.</li>
+        <li *ngIf="form.controls.title.dirty && (form.controls.title.errors?.minlength || form.controls.title.errors?.maxlength)">
+          Max length : 50, Min length : 5.</li>
+        <li *ngIf="form.controls.title.dirty && form.controls.title.errors?.alphaNumericValidation">Only include a letter or number.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="body">Body</label>
+    <div [ngClass]="{'has-success' : form.controls.body.valid, 'has-error': form.controls.body.dirty && form.controls.body.errors}">
+      <textarea class="form-control" name="body" placeholder="*Body" rows="8" cols="80" autocomplete="off" formControlName="body"></textarea>
+
+      <ul class="help-block">
+        <li *ngIf="form.controls.body.dirty && form.controls.body.errors?.required">This field is required.</li>
+        <li *ngIf="form.controls.body.dirty && (form.controls.body.errors?.minlength || form.controls.body.errors?.maxlength)">
+          Max length : 500, Min length : 5.</li>
+      </ul>
+    </div>
+  </div>
+
+  <button [disabled]="processing" type="button" name="button" (click)="goBack()" class="btn btn-lg btn-warning">Go Back</button>
+  <button [disabled]="processing || !form.valid" type="submit" name="button" class="btn btn-lg btn-success">Submit</button>
+</form>
+
+ <div>valid : {{form.controls.title.valid}}</div>
+ <div>min : {{form.controls.title.errors?.minlength}}</div>
+ <div>max : {{form.controls.title.errors?.maxlength}}</div>
+  <div>err : {{form.controls.title.errors}}</div>
+  <div>dirty : {{form.controls.title.dirty}}</div>
+
+
+<!-- New blog form -->
+
+
+
+<div class="blog-body">
   <div class="container">
     <div *ngIf="!newPost">
-      <div class="card">
+      <div>card shows here</div>
+      <div *ngFor="let blog of blogPosts" class="card">
         <div class="card-header bg-info">
-          <h3 class="card-title text-capitalize text-center">Post Title</h3>
+          <h3 class="card-title text-capitalize text-center">{{blog.title}}</h3>
         </div>
         <div class="card-body text-left text-justify">
-          Pellentesque ornare a urna et molestie. Vivamus semper lorem vel mauris varius, ac lobortis ante semper. Ut dui justo, interdum eget ligula ac, feugiat lacinia turpis. Aliquam ullamcorper quam nec augue commodo sollicitudin. Sed egestas leo erat, ac pellentesque nunc convallis at. Nullam lobortis lectus tincidunt iaculis interdum. Nam vitae pretium elit, a bibendum libero. Ut sollicitudin accumsan lorem, id posuere metus luctus id. Donec non elit eu est tempor fermentum nec ac nunc. Nam tincidunt tellus ex. Aenean est enim, euismod nec finibus non, blandit non nisi. Phasellus sed est leo. Sed sed bibendum urna. Morbi maximus arcu et elementum scelerisque. Donec placerat augue at lorem malesuada, a hendrerit erat finibus.
+          {{blog.body}}
         </div>
         <!-- Start card Footer -->
         <div class="card-footer">
           <p>
-            <strong>Posted by : </strong>Kim
+            <strong>Posted by : </strong>{{blog.createdBy}}
           </p>
           <p>
-            <strong>Date : </strong>Aug 20, 2017
+            <strong>Date : </strong>{{blog.createdAt | date:'MMM dd, yyyy'}}
           </p>
-          <div>
-            <p><strong>Likes : </strong>25</p>
-            <p><strong>Dislikes : </strong>22</p>
+          <div *ngIf="blog.createdBy === username">
+            <p><strong>Likes : </strong>{{blog.likes}}</p>
+            <p><strong>Dislikes : </strong>{{blog.dislikes}}</p>
           </div>
-          <a href="#"><button type="button" name="button" class="btn btn-sm btn-info">Edit</button></a>
-          <a href="#"><button type="button" name="button" class="btn btn-sm btn-danger">Delete</button></a>
+
+          <div *ngIf="blog.createdBy === username">
+            <a [routerLink]="['/edit-blog/', blog._id]"><button type="button" name="button" class="btn btn-sm btn-info">Edit</button></a>
+            <a [routerLink]="['/delete-blog/', blog._id]"><button type="button" name="button" class="btn btn-sm btn-danger">Delete</button></a>
+          </div>
 
           <!-- Likes dropdown -->
           <div class="dropdown">
@@ -65,10 +112,7 @@
               <!--<button type="button" name="button" class="btn btn-sm btn-info">Submit Post</button>-->
               <!--<button type="button" name="button" class="btn btn-sm btn-danger">Cancel</button>-->
             <!--</form>-->
-
           </li>
-
-
         </ul>
       </div>
     </div>

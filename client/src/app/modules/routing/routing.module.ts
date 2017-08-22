@@ -15,7 +15,7 @@ const appRoutes : Routes = [
   {path : 'profile', component : ProfileComponent,  canActivate : [AuthGuardService]},
   {path : 'dashboard', component : DashboardComponent, canActivate : [AuthGuardService]},
   {path : 'register', component : RegisterComponent, canActivate : [NotAuthGuardService]},
-  {path : 'blog', component : BlogComponent},
+  {path : 'blogs/newblog', component : BlogComponent, canActivate : [AuthGuardService]},
   {path : '', component : HomeComponent},
   {path : '**', component : HomeComponent},
 ];

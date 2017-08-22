@@ -20,21 +20,18 @@ export class AuthService {
     // use header to attach header.
     // check if user is authorized.
 
-    this.loadToken();
+    this.authToken = this.loadToken();
 
-    this.options = new RequestOptions( {
+    return new RequestOptions( {
       headers : new Headers({
         'Content-Type' : 'application/json',
         'authorization' : this.authToken
       })
     })
-
-
   }
 
   loadToken() {
-    const token = localStorage.getItem('token');
-    this.authToken = token;
+    return localStorage.getItem('token');
   }
 
   registerUser(user) {
@@ -62,7 +59,7 @@ export class AuthService {
   }
 
   getProfile() {
-    this.createAuthenticationHeaders();
+    this.options = this.createAuthenticationHeaders();
     return this.http.get(this.domain + '/authentication/profile', this.options).map(res => res.json());
   }
 
