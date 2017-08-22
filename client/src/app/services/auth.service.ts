@@ -21,6 +21,11 @@ export class AuthService {
     // check if user is authorized.
 
     this.authToken = this.loadToken();
+    // if (!this.authToken) {
+    //   console.log("Token not found in browser.");
+    // } else {
+    //   console.log('this.authToken : ', this.authToken);
+    // }
 
     return new RequestOptions( {
       headers : new Headers({

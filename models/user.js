@@ -140,3 +140,7 @@ module.exports.addUser = (newUser, callback) => {
     //     });
     // });
 };
+
+module.exports.findUserById = (id, callback) => {
+    User.findOne({_id : id}, callback);
+};

@@ -6,21 +6,26 @@
   </div>
 </div>
 
-<form (click)="updateBlogSubmit()">
+<form (submit)="updateBlogSubmit()" *ngIf="!loading">
   <div class="form-group">
     <label for="title">Title</label>
     <!-- we use form-control because we don't have to do the validation. -->
-    <input [disabled]="processing" type="text" name="title" placeholder="*Blog-title" class="form-control" [(ngModel)]="blog.title"  >
+    <input [disabled]="processing" type="text" name="title" placeholder="*Blog-title" class="form-control" [(ngModel)]="blog.title">
   </div>
 
   <div class="form-group">
     <label for="body">Body</label>
-    <textarea [disabled]="processing" name="body" rows="8" cols="80" [(ngModel)]="blog.body" class="form-control" placeholder="*Blog body"></textarea>
+    <textarea [disabled]="processing" name="body" rows="8" cols="80" class="form-control" placeholder="*Blog body" [(ngModel)]="blog.body"></textarea>
   </div>
 
   <div class="form-group">
     <a [routerLink]="['delete-blog', blog._id]"><button [disabled]="processing" type="button" name="button" class="btn btn-danger">Delete</button></a>
     <button [disabled]="processing" type="button" name="button" class="btn btn-default" (click)="goBack()" >Go Back</button>
-    <button [disabled]="processing" type="submit" name="save" class="btn btn-info" (click)="goBack()" >Save Changes</button>
+    <button [disabled]="processing" type="submit" name="save" class="btn btn-info">Save Changes</button>
   </div>
 </form>
+
+<!--<p>Blog : {{blog}}</p>-->
+<!--<p>Blog title : {{blog.title}}</p>-->
+<!--<p>Blog body : {{blog.body}}</p>-->
+

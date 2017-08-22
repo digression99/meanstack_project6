@@ -83,8 +83,8 @@
           </div>
 
           <div *ngIf="blog.createdBy === username">
-            <a [routerLink]="['/edit-blog/', blog._id]"><button type="button" name="button" class="btn btn-sm btn-info">Edit</button></a>
-            <a [routerLink]="['/delete-blog/', blog._id]"><button type="button" name="button" class="btn btn-sm btn-danger">Delete</button></a>
+            <a [routerLink]="['edit-blog/', blog._id]"><button type="button" name="button" class="btn btn-sm btn-info">Edit</button></a>
+            <a [routerLink]="['delete-blog/', blog._id]"><button type="button" name="button" class="btn btn-sm btn-danger">Delete</button></a>
           </div>
 
           <!-- Likes dropdown -->

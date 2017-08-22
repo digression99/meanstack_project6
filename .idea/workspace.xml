@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c27b31f2-09ac-4410-b097-6cee9d455318" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/blog/blog.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/blog/blog.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/blog/blog.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/blog/blog.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/auth.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/auth.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/blog.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/blog.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/blog.js" afterPath="$PROJECT_DIR$/models/blog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/user.js" afterPath="$PROJECT_DIR$/models/user.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/blogs.js" afterPath="$PROJECT_DIR$/routes/blogs.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,11 +25,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add-blog.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/components/add-blog/add-blog.component.ts">
+      <file leaf-file-name="blog.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/components/blog/blog.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="402">
+              <caret line="89" column="33" lean-forward="true" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+              <folding>
+                <element signature="e#444#450#0" expanded="true" />
+                <element signature="e#450#456#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit-blog.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -33,35 +50,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/modules/routing/routing.module.ts">
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="353">
+              <caret line="145" column="2" lean-forward="false" selection-start-line="145" selection-start-column="2" selection-end-line="145" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/app/components/blog/blog.component.ts">
+      <file leaf-file-name="edit-blog.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="171">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth-guard.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/services/auth-guard.service.ts">
+      <file leaf-file-name="authentication.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/authentication.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="109">
+              <caret line="118" column="9" lean-forward="true" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -70,22 +83,32 @@
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="47" column="24" lean-forward="true" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+            <state relative-caret-position="286">
+              <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#56#114#0" expanded="true" />
-                <marker date="1503384614000" expanded="true" signature="1615:1628" ph="[...]" />
+                <marker date="1503387498000" expanded="true" signature="1677:1690" ph="[...]" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blogs.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="blogs.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/blogs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+            <state relative-caret-position="457">
+              <caret line="167" column="34" lean-forward="false" selection-start-line="167" selection-start-column="34" selection-end-line="167" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/services/auth.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-249">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,8 +117,8 @@
       <file leaf-file-name="blog.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/services/blog.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+            <state relative-caret-position="243">
+              <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -104,30 +127,8 @@
       <file leaf-file-name="blog.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/blog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="103" column="16" lean-forward="false" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit-blog.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit-blog.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="353">
+              <caret line="114" column="2" lean-forward="false" selection-start-line="114" selection-start-column="2" selection-end-line="114" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -146,6 +147,7 @@
     <findStrings>
       <find>title</find>
       <find>newPost</find>
+      <find>No token</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,7 +162,6 @@
         <option value="$PROJECT_DIR$/client/src/app/components/dashboard/dashboard.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/components/register/register.component.css" />
         <option value="$PROJECT_DIR$/client/src/app/components/register/register.component.ts" />
-        <option value="$PROJECT_DIR$/models/user.js" />
         <option value="$PROJECT_DIR$/client/src/app/components/login/login.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/components/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/client/src/app/components/profile/profile.component.html" />
@@ -175,21 +176,22 @@
         <option value="$PROJECT_DIR$/client/src/app/components/blog/blog.component.css" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/config/database.js" />
-        <option value="$PROJECT_DIR$/client/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/services/auth.service.ts" />
         <option value="$PROJECT_DIR$/routes/authentication.js" />
         <option value="$PROJECT_DIR$/client/src/app/components/home/home.component.html" />
-        <option value="$PROJECT_DIR$/client/src/app/services/blog.service.ts" />
         <option value="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/modules/routing/routing.module.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/components/blog/blog.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/components/add-blog/add-blog.component.ts" />
         <option value="$PROJECT_DIR$/client/src/app/components/add-blog/add-blog.component.html" />
-        <option value="$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/components/blog/blog.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/components/blog/blog.component.ts" />
+        <option value="$PROJECT_DIR$/models/user.js" />
         <option value="$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/services/auth.service.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/services/blog.service.ts" />
         <option value="$PROJECT_DIR$/models/blog.js" />
         <option value="$PROJECT_DIR$/routes/blogs.js" />
-        <option value="$PROJECT_DIR$/client/src/app/components/blog/blog.component.ts" />
       </list>
     </option>
   </component>
@@ -379,12 +381,12 @@
       <updated>1502884266502</updated>
       <workItem from="1502884268158" duration="24309000" />
       <workItem from="1503214288985" duration="18609000" />
-      <workItem from="1503314740422" duration="5811000" />
+      <workItem from="1503314740422" duration="11699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48729000" />
+    <option name="totallyTimeSpent" value="54617000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -406,7 +408,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26723096" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44740024" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -460,7 +462,7 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#56#114#0" expanded="true" />
-            <marker date="1503384614000" expanded="true" signature="1615:1628" ph="[...]" />
+            <marker date="1503387498000" expanded="true" signature="1677:1690" ph="[...]" />
           </folding>
         </state>
       </provider>
@@ -486,6 +488,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -619,16 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -655,14 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="141" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -681,24 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/services/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/authentication.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -736,26 +703,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="56" lean-forward="true" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/blog/blog.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="60" lean-forward="true" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-          <folding>
-            <element signature="e#444#450#0" expanded="true" />
-            <element signature="e#450#456#0" expanded="true" />
+            <element signature="e#0#73#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -768,72 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="47" column="24" lean-forward="true" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#56#114#0" expanded="true" />
-            <marker date="1503384614000" expanded="true" signature="1615:1628" ph="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/blog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="103" column="16" lean-forward="false" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/blogs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/add-blog/add-blog.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/modules/routing/routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/services/auth-guard.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -842,21 +724,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/services/blog.service.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        <state relative-caret-position="184">
+          <caret line="40" column="56" lean-forward="true" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/add-blog/add-blog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="50" lean-forward="true" selection-start-line="0" selection-start-column="50" selection-end-line="1" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/modules/routing/routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/components/blog/blog.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        <state relative-caret-position="116">
+          <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#56#114#0" expanded="true" />
+            <marker date="1503387498000" expanded="true" signature="1677:1690" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="145" column="2" lean-forward="false" selection-start-line="145" selection-start-column="2" selection-end-line="145" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/blog/blog.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="89" column="33" lean-forward="true" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+          <folding>
+            <element signature="e#444#450#0" expanded="true" />
+            <element signature="e#450#456#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/edit-blog/edit-blog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/services/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/services/blog.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/authentication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="118" column="9" lean-forward="true" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/blog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="114" column="2" lean-forward="false" selection-start-line="114" selection-start-column="2" selection-end-line="114" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/blogs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="167" column="34" lean-forward="false" selection-start-line="167" selection-start-column="34" selection-end-line="167" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -19,9 +19,23 @@ export class BlogService {
   }
 
   getAllBlogs() {
-
     this.options = this.authService.createAuthenticationHeaders();
 
     return this.http.get(this.authService.domain + '/blogs/allblogs', this.options).map(res => res.json());
+  }
+
+  getSingleBlog(id) {
+    this.options = this.authService.createAuthenticationHeaders();
+
+    return this.http.get(this.authService.domain + '/blogs/single-blog/' + id, this.options).map(res => res.json());
+  }
+
+  updateBlog(blog) {
+    this.options = this.authService.createAuthenticationHeaders();
+
+    console.log('in update blog, this.options : ', this.options);
+    console.log('in update blog, id : ', blog);
+
+    return this.http.put(this.authService.domain + '/blogs/update-blog/', blog, this.options).map(res => res.json());
   }
 }

@@ -14,6 +14,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {FormsModule} from '@angular/forms';
 
 import { AuthService } from './services/auth.service';
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -43,14 +44,14 @@ import { AddBlogComponent } from './components/add-blog/add-blog.component';
     AddBlogComponent
   ],
   imports: [
+    FlashMessagesModule,
     BrowserModule,
     RoutingModule,
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
-    FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuardService,NotAuthGuardService, BlogService],
+  providers: [AuthService, AuthGuardService,NotAuthGuardService, BlogService, FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

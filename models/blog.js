@@ -101,5 +101,15 @@ module.exports.findAllBlog = (callback) => {
 };
 
 module.exports.findOneBlogById = (id, callback) => {
-    Blog.find({_id : id}, callback);
+    Blog.findOne({_id : id}, callback);
+};
+
+module.exports.updateBlog = (newBlog, callback) => {
+    // How this could be possible?
+    // It's just an object...
+    newBlog.save(callback);
+};
+
+module.exports.deleteBlog = (blog, callback) => {
+    blog.remove(callback);
 };

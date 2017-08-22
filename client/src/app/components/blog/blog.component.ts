@@ -28,14 +28,14 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit() {
+    //console.log('blog ngOnInit.');
     this.authService.getProfile().subscribe(data => {
       if (data.user) {
         this.username = data.user.username;
-
         this.createNewBlogForm();
         this.getAllBlogs();
       } else {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/login']).then();
       }
     });
   }
@@ -65,10 +65,6 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  goBack() {
-    window.location.reload();
-  }
-
   enableNewBlogForm() {
     this.form.get('title').enable();
     this.form.get('body').enable();
@@ -77,10 +73,6 @@ export class BlogComponent implements OnInit {
   disableNewBlogForm() {
     this.form.get('title').disable();
     this.form.get('body').disable();
-  }
-
-  newBlogForm() {
-    this.newPost = true;
   }
 
   reloadBlogs() {
@@ -102,37 +94,37 @@ export class BlogComponent implements OnInit {
     });
   }
 
-  onBlogSubmit() {
-    this.processing = true;
-    this.disableNewBlogForm();
-
-    const blog = {
-      title : this.form.get('title').value,
-      body : this.form.get('body').value,
-      createdBy : this.username
-    };
-
-    this.blogService.addNewBlog(blog).subscribe(data => {
-      if (!data.success) {
-        this.messageClass = 'alert alert-danger';
-        this.message = data.message;
-        this.processing = false;
-        this.enableNewBlogForm();
-      } else {
-        this.getAllBlogs();
-        this.messageClass = 'alert alert-success';
-        this.message = data.message;
-
-        setTimeout(() => {
-          this.newPost = false;
-          this.processing = false;
-          this.message = false;
-          this.form.reset();
-          this.enableNewBlogForm();
-        }, 2000)
-      }
-    });
-  }
+  // onBlogSubmit() {
+  //   this.processing = true;
+  //   this.disableNewBlogForm();
+  //
+  //   const blog = {
+  //     title : this.form.get('title').value,
+  //     body : this.form.get('body').value,
+  //     createdBy : this.username
+  //   };
+  //
+  //   this.blogService.addNewBlog(blog).subscribe(data => {
+  //     if (!data.success) {
+  //       this.messageClass = 'alert alert-danger';
+  //       this.message = data.message;
+  //       this.processing = false;
+  //       this.enableNewBlogForm();
+  //     } else {
+  //       this.getAllBlogs();
+  //       this.messageClass = 'alert alert-success';
+  //       this.message = data.message;
+  //
+  //       setTimeout(() => {
+  //         this.newPost = false;
+  //         this.processing = false;
+  //         this.message = false;
+  //         this.form.reset();
+  //         this.enableNewBlogForm();
+  //       }, 2000)
+  //     }
+  //   });
+  // }
 
 
 }
