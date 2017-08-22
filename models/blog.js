@@ -99,3 +99,7 @@ module.exports.addBlog = (newBlog, callback) => {
 module.exports.findAllBlog = (callback) => {
     Blog.find({}, callback).sort({_id : -1});
 };
+
+module.exports.findOneBlogById = (id, callback) => {
+    Blog.find({_id : id}, callback);
+};

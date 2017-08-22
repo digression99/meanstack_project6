@@ -53,8 +53,26 @@ module.exports = (router) => {
                 }
             }
         })
+    });
 
-        //res.send('test');
+    router.get('/singleBlog/:id', (req, res) => {
+        const id = req.params.id;
+        if (id) {
+            Blog.findOneBlogById(id, (err, blog) => {
+                if (err) {
+                    // typically, error generates because id is not valid.
+                    res.json({success : false, message : "ID is not valid."});
+                } else {
+                    if (!blog) {
+                        res.json({success : false, message : 'Blog not found!'});
+                    } else {
+                        res.json({success: true, blog: blog})
+                    }
+                }
+            });
+        } else {
+            res.json({success : false, message : "No blog id was provided."});
+        }
     });
 
     return router;
