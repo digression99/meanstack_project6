@@ -1,33 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
+import { FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {BlogService} from '../../services/blog.service';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  selector: 'app-add-blog',
+  templateUrl: './add-blog.component.html',
+  styleUrls: ['./add-blog.component.css']
 })
-export class BlogComponent implements OnInit {
+export class AddBlogComponent implements OnInit {
 
   messageClass;
   message;
-  newPost = false;
-  loadingBlogs = false;
-  form;
-  processing = false;
+  processing;
   username;
-  blogPosts;
+  form : FormGroup;
 
-  constructor(private formBuilder : FormBuilder,
-              private authService : AuthService,
-              private blogService : BlogService) {
-    //this.createNewBlogForm();
-  }
+
+  constructor(private authService : AuthService, // blog Component와 데이터 바인딩 필요
+              private blogService : BlogService,
+              private formBuilder : FormBuilder,
+              private router : Router) { }
 
   ngOnInit() {
     this.createNewBlogForm();
-    this.getAllBlogs();
+    //this.getAllBlogs();
 
     this.authService.getProfile().subscribe(data => {
       this.username = data.user.username;
@@ -60,7 +58,9 @@ export class BlogComponent implements OnInit {
   }
 
   goBack() {
-    window.location.reload();
+    this.router.navigate(['/blogs']);
+
+    //window.location.reload();
   }
 
   enableNewBlogForm() {
@@ -73,31 +73,8 @@ export class BlogComponent implements OnInit {
     this.form.get('body').disable();
   }
 
-  newBlogForm() {
-    this.newPost = true;
-  }
-
-  reloadBlogs() {
-    this.loadingBlogs = true;
-    // get all blogs.
-    this.getAllBlogs();
-    setTimeout(() => {
-      this.loadingBlogs = false;
-    }, 4000)
-  }
-
-  draftComment() {
-
-  }
-
-  getAllBlogs() {
-    this.blogService.getAllBlogs().subscribe(data => {
-      this.blogPosts = data.blogs;
-    });
-  }
-
   onBlogSubmit() {
-    this.processing = true;
+    this.processing = true; // if processing, block the form.
     this.disableNewBlogForm();
 
     const blog = {
@@ -113,20 +90,19 @@ export class BlogComponent implements OnInit {
         this.processing = false;
         this.enableNewBlogForm();
       } else {
-        this.getAllBlogs();
+        //this.getAllBlogs();
         this.messageClass = 'alert alert-success';
         this.message = data.message;
 
         setTimeout(() => {
-          this.newPost = false;
+          //this.newPost = false;
           this.processing = false;
           this.message = false;
           this.form.reset();
           this.enableNewBlogForm();
+          this.router.navigate(['/blogs']);
         }, 2000)
       }
     });
   }
-
-
 }
