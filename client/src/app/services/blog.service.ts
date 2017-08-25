@@ -38,4 +38,31 @@ export class BlogService {
 
     return this.http.put(this.authService.domain + '/blogs/update-blog/', blog, this.options).map(res => res.json());
   }
+
+  deleteBlog(id) {
+    this.options = this.authService.createAuthenticationHeaders();
+
+    return this.http.delete(this.authService.domain + '/blogs/delete-blog/' + id, this.options).map(res => res.json());
+  }
+
+  likeBlog(id) {
+    const blogData = {id : id};
+    this.options = this.authService.createAuthenticationHeaders();
+
+    return this.http.put(this.authService.domain + '/blogs/like-blog', blogData, this.options).map(res => res.json());
+  }
+  dislikeBlog(id) {
+    const blogData = {id : id};
+    this.options = this.authService.createAuthenticationHeaders();
+
+    return this.http.put(this.authService.domain + '/blogs/dislike-blog', blogData, this.options).map(res => res.json());
+  }
+
+  postComment(id, comment) {
+    this.options = this.authService.createAuthenticationHeaders();
+
+    const blogData = {id : id, comment : comment};
+
+    return this.http.put(this.authService.domain + '/blogs/comment', blogData, this.options).map(res => res.json());
+  }
 }

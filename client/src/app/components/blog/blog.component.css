@@ -2,6 +2,10 @@
   padding : 70px;
 }
 
+.blog-post {
+  margin : 1em;
+}
+
 /* Style The Dropdown Button */
 .dropbtn {
   background-color: #4CAF50;

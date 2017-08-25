@@ -134,6 +134,34 @@ module.exports = (router) => {
         }
     });
 
+    router.get('/public-profile/:username', (req, res) => {
+        if (!req.params.username) {
+            res.json({success : false, message : "No username provided."});
+        } else {
+            //User.findUserById()
+            // User.findOne({username : req.params.username}).select('username e-mail').exec((err, user) => {
+            //
+            // });
+
+            User.findUserByUsername(req.params.username, (err, user) => {
+                if (err) {
+                    res.json({success : false, message : err});
+                } else if (!user) {
+                    res.json({success : false, message : "Username not found."});
+                } else {
+                    let foundUser = {
+                        username : user.username,
+                        email : user.email
+                    };
+
+                    res.json({success : true, user : foundUser});
+                }
+
+            })
+
+        }
+    })
+
 
 
 

@@ -9,6 +9,7 @@ const authentication = require('./routes/authentication')(router);
 const blogs = require('./routes/blogs')(router);
 var bodyParser = require('body-parser');
 const cors = require('cors');
+const port = process.env.PORT || 8080; // to deploy, you need to use environment port.
 
 
 mongoose.Promise = global.Promise;
@@ -45,6 +46,6 @@ app.get('*', (req, res) => {
     //res.send('hello');
 });
 
-app.listen(8080, () => {
-    console.log('Server running on port 8080');
+app.listen(port, () => {
+    console.log('Server running on port,' + port);
 });

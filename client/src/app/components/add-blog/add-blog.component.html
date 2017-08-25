@@ -1,4 +1,11 @@
 <h1 class="page-header">Add Post</h1>
+
+<div class="row show-hide-message" *ngIf="message">
+  <div [ngClass]="messageClass">
+    {{message}}
+  </div>
+</div>
+
 <!-- New blog form -->
 <form [formGroup]="form" name="blogForm" (submit)="onBlogSubmit()">
   <div class="form-group">

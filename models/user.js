@@ -144,3 +144,7 @@ module.exports.addUser = (newUser, callback) => {
 module.exports.findUserById = (id, callback) => {
     User.findOne({_id : id}, callback);
 };
+
+module.exports.findUserByUsername = (username, callback) => {
+    User.findOne({username : username}, callback);
+};

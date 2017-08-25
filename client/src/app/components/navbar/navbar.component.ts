@@ -6,12 +6,11 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
-  providers : [FlashMessagesService]
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authService : AuthService,
+  constructor(public authService : AuthService, // production mode -> html에서 직접 접근하기 위해 public.
               private router : Router,
               private flashMessage : FlashMessagesService) { }
 
@@ -20,7 +19,10 @@ export class NavbarComponent implements OnInit {
 
   onLogoutClick() {
     this.authService.logout();
-    this.flashMessage.show('You are logged out.', { cssClass : 'alert-info'});
+    this.flashMessage.show('You are logged out.', {
+      cssClass : 'alert-success',
+      timeout : 3000
+    });
     this.router.navigate(['/']).then();
   }
 }

@@ -29,6 +29,8 @@ import { BlogComponent } from './components/blog/blog.component';
 import {BlogService} from './services/blog.service';
 import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
 import { AddBlogComponent } from './components/add-blog/add-blog.component';
+import { DeleteBlogComponent } from './components/delete-blog/delete-blog.component';
+import { PublicProfileComponent } from './components/public-profile/public-profile.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { AddBlogComponent } from './components/add-blog/add-blog.component';
     ProfileComponent,
     BlogComponent,
     EditBlogComponent,
-    AddBlogComponent
+    AddBlogComponent,
+    DeleteBlogComponent,
+    PublicProfileComponent
   ],
   imports: [
     FlashMessagesModule,
